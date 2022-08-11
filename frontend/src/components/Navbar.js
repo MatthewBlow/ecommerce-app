@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { logout } from "../redux/apicalls";
+import SearchBar from './SearchBar';
 
 const Container = styled.div`
   background-color: rgb(203, 199, 199);
@@ -153,10 +154,7 @@ const NavbarTest = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <SearchContainer>
-            <Input placeholder="Search" />
-            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
-            </SearchContainer>
+            <SearchBar/>
           </Nav>
             </Center>
             <Right>
