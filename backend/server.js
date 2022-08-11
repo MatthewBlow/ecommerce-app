@@ -2,6 +2,7 @@ const express = require('express')
 const connectDB = require('./config/db')
 const port = process.env.PORT || 5001
 const cors = require("cors")
+require('dotenv').config()
 
 connectDB(); 
 
@@ -12,7 +13,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: process.env.FRONTEND_URL
 })) 
 
 app.use('/api/auth', require('./routes/auth'))
