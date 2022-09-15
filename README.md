@@ -6,14 +6,9 @@
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
 
 ## General Information
 - It is an ecommerce website for computers and components. In the website you are able to browse through a collection of items and add them to your cart. Once all       items have been added, you can purchase the items from your cart and recieve the invoice for that purchase
@@ -70,8 +65,7 @@ type `npm install` to install the necessary packages
 type `npm start` to run the React frontend
 
 ## Project Status
-Project is: _currently not being worked on but could be fully completed in the future  
-
+Project is: _currently not being worked on but could be fully completed in the future
 
 ## Room for Improvement
 
