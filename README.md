@@ -69,43 +69,22 @@ type `npm install` to install the necessary packages
 
 type `npm start` to run the React frontend
 
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
-
-
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _currently not being worked on but could be fully completed in the future  
 
 
 ## Room for Improvement
 Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+- The design could be more responsive and work better with different resolutions 
+- Could be optomised for mobile, as it currently has no proper mobile optimisation 
+- Registering a new user currently doesn't have any Regex validation
+- Search bar has partial functionality but none of it visual (search suggestions are created but not shown to client)
+- Can't increase or decrease amount of items in cart
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
-
-
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
+- Mobile optimisation
+- RegEx validation 
+- Search Bar
+- Add increment and decrement
