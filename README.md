@@ -80,4 +80,5 @@ To do:
 - Mobile optimisation
 - RegEx validation 
 - Search Bar
-- Add increment and decrement
+- Add increment and decrement of items in shopping cart
+- Favourites/Wishlist
