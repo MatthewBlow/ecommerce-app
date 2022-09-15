@@ -1,5 +1,5 @@
 # ecommerce-app
-> Outline a brief description of your project.
+> Online computer parts shop.
 > Live demo [_here_](https://taupe-bublanina-2943f1.netlify.app/).
 
 ## Table of Contents
