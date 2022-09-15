@@ -1,6 +1,6 @@
 # ecommerce-app
 > Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_]([https://www.example.com](https://taupe-bublanina-2943f1.netlify.app/)).
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -17,35 +17,44 @@
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
-
+- It is an ecommerce website for computers and components. In the website you are able to browse through a collection of items and add them to your cart. Once all       items have been added, you can purchase the items from your cart and recieve the invoice for that purchase
+- I made this project to improve my skills as a developer and to showcase my ability to create a robust web application that makes use of different technologies to       provide a completed solution  
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
-
+- React - 18.2.0
+- Redux - 7.2.5
+- Stripe - 10.1.0
+- Styled Components - 5.3.5
+- Material UI - 5.9.2
+- Redux ToolKit - 1.6.1
+- Axios - 0.27.2
+- Bootstrap - 5.2.0
+- Bcrypt - 5.0.1
+- Cors 2.8.5
+- Dotenv - 16.0.2
+- Express - 4.18.1
+- Express Async Handler - 1.2.0
+- Heroku - 7.63.0
+- JWT - 8.5.1
+- Mongoose - 6.5.0
+- Nodemon - 2.0.19
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
-
-
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
+- Homepage slider for promotional content 
+- List of available products 
+- View product pages by category
+- View a single product and add it to cart
+- Register a user
+- Login/Logout a user
+- Ability to save items to cart 
+- Ability to purchase cart items using Stripe
+- Receive an invoice of the purchase 
 
 ## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
 
-Proceed to describe how to install / setup one's local environment / get started with the project.
+# Frontend Setup
+
+Make sure you are in the main `ecommerce-app` directory 
 
 
 ## Usage
