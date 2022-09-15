@@ -74,7 +74,6 @@ Project is: _currently not being worked on but could be fully completed in the f
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
 
 Room for improvement:
 - The design could be more responsive and work better with different resolutions 
