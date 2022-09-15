@@ -15,7 +15,6 @@
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
-
 ## General Information
 - It is an ecommerce website for computers and components. In the website you are able to browse through a collection of items and add them to your cart. Once all       items have been added, you can purchase the items from your cart and recieve the invoice for that purchase
 - I made this project to improve my skills as a developer and to showcase my ability to create a robust web application that makes use of different technologies to       provide a completed solution  
@@ -52,9 +51,23 @@
 
 ## Setup
 
-# Frontend Setup
+### Frontend Setup
 
 Make sure you are in the main `ecommerce-app` directory 
+
+type `cd frontend` to access frontend folder
+
+type `npm install` to install the necessary packages 
+
+type `npm start` to run the React frontend
+
+### Backend Setup
+
+type `cd frontend` to access frontend folder
+
+type `npm install` to install the necessary packages 
+
+type `npm start` to run the React frontend
 
 
 ## Usage
