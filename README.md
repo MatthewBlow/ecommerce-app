@@ -1,6 +1,6 @@
 # ecommerce-app
 > Outline a brief description of your project.
-> Live demo [_here_]([https://www.example.com](https://taupe-bublanina-2943f1.netlify.app/)).
+> Live demo [_here_]([https://taupe-bublanina-2943f1.netlify.app/]).
 
 ## Table of Contents
 * [General Info](#general-information)
