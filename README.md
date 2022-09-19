@@ -12,7 +12,11 @@
 
 ## General Information
 - It is an ecommerce website for computers and components. In the website you are able to browse through a collection of items and add them to your cart. Once all       items have been added, you can purchase the items from your cart and recieve the invoice for that purchase
-- I made this project to improve my skills as a developer and to showcase my ability to create a robust web application that makes use of different technologies to       provide a completed solution  
+- I made this project to improve my skills as a developer and to showcase my ability to create a robust web application that makes use of different technologies to       provide a completed solution
+- NB: The Stripe payment system that is implemented is in test mode and won't take any real card information. You will need to input the following test data in order     for the payment to work properly
+  Card No: 4242 4242 4242 4242
+  Exp: 04/28
+  CVC: 123
 
 ## Technologies Used
 - React - 18.2.0
@@ -24,7 +28,7 @@
 - Axios - 0.27.2
 - Bootstrap - 5.2.0
 - Bcrypt - 5.0.1
-- Cors 2.8.5
+- Cors - 2.8.5
 - Dotenv - 16.0.2
 - Express - 4.18.1
 - Express Async Handler - 1.2.0
