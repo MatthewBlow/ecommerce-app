@@ -47,6 +47,7 @@
 - Ability to save items to cart 
 - Ability to purchase cart items using Stripe
 - Receive an invoice of the purchase 
+- Fully functional searchbar 
 
 ## Setup
 
@@ -69,15 +70,13 @@ type `npm install` to install the necessary packages
 type `npm start` to run the React frontend
 
 ## Project Status
-Project is: _currently not being worked on but could be fully completed in the future
+Project is: Completed but addtional optimisations will be made for browsers in the future.
 
 ## Room for Improvement
 
 Room for improvement:
 - The design could be more responsive and work better with different resolutions 
 - Could be optomised for mobile, as it currently has no proper mobile optimisation 
-- Registering a new user currently doesn't have any Regex validation
-- Search bar has partial functionality but none of it visual (search suggestions are created but not shown to client)
 - Can't increase or decrease amount of items in cart
 
 To do:
