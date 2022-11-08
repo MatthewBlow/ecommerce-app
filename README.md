@@ -47,7 +47,7 @@
 - Ability to save items to cart 
 - Ability to purchase cart items using Stripe
 - Receive an invoice of the purchase 
-- Fully functional searchbar 
+- Fully functional search bar 
 
 ## Setup
 
