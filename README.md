@@ -76,7 +76,7 @@ Project is: Completed but addtional optimisations will be made for browsers in t
 
 Room for improvement:
 - The design could be more responsive and work better with different resolutions 
-- Could be optomised for mobile, as it currently has no proper mobile optimisation 
+- Could be optomised for mobile, as it currently has little mobile optimisation 
 - Can't increase or decrease amount of items in cart
 
 To do:
