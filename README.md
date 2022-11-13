@@ -70,7 +70,7 @@ type `npm install` to install the necessary packages
 type `npm start` to run the React frontend
 
 ## Project Status
-Project is: Completed but addtional optimisations will be made for browsers in the future.
+Project is: Completed but addtional optimisations will be made for mobile in the future.
 
 ## Room for Improvement
 
