@@ -63,11 +63,11 @@ type `npm start` to run the React frontend
 
 ### Backend Setup
 
-type `cd frontend` to access frontend folder
+type `cd backend` to access backend folder
 
 type `npm install` to install the necessary packages 
 
-type `npm start` to run the React frontend
+type `npm start` to run the Express.js backend
 
 ## Project Status
 Project is: Completed but addtional optimisations will be made for mobile in the future.
