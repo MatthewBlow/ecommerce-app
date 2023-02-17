@@ -19,6 +19,9 @@ const persistConfig = {
   storage,
 };
 
+// This is what is used to make all of the state information persist throughout the application
+// Taken from redux toolkit documentation
+
 const rootReducer = combineReducers({ user: userReducer, cart: cartReducer });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

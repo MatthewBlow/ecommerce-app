@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
 import styled from "styled-components";
 import Product from "./Product";
 
@@ -13,16 +14,22 @@ const Container = styled.div`
     grid-gap: 10px;
 `;
 
+const Wrapper = styled.div`
+  background-color: #191919;
+`
+
 const ProductTitle =  styled.h1`
-    padding: 50px;
+    padding: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: white;
 `
 
 const Products = ({cat, sort}) => {
   const [products, setProducts] = useState([])
+  const location = useLocation()
+  const title = location.pathname.split("/")[2]?.toUpperCase()
 
   useEffect(() => {
     const getProducts = async () => {
@@ -54,16 +61,15 @@ const Products = ({cat, sort}) => {
     }
   }, [sort])
 
-  console.log(cat, sort)
   return (
-    <div>
-    <ProductTitle>Our Products:</ProductTitle>
+    <Wrapper>
+    <ProductTitle>{title ? title : "Our Products"}</ProductTitle>
     <Container>
       {products.map((item) => (
         <Product item={item} key={item.id} />
       ))}
     </Container>
-    </div>
+    </Wrapper>
   );
 };
 

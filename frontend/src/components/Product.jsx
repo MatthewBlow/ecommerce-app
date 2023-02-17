@@ -66,11 +66,11 @@ const Icon = styled.div`
 `;
 
 const Title = styled.p`
-
+  color: white;
 `
 
 const Price = styled.p`
-  color: red;
+  color: #c4c4c4;
 `
 
 const Product = ({ item }) => {
@@ -85,9 +85,7 @@ const Product = ({ item }) => {
           <ShoppingCartOutlinedIcon />
         </Icon>
         <Icon>
-          
           <SearchIcon />
-          
         </Icon>
         <Icon>
           <FavoriteIcon />

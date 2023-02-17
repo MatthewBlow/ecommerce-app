@@ -51,8 +51,21 @@ const Slide = styled.div`
 `;
 
 const ImgContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   flex: 1;
+
+  @media (max-width: 1670px) {
+    height: 80vh;
+  }
+
+  @media (max-width: 1356px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 1352px) {
+    height: 40vh;
+  }
+
 `;
 
 const Image = styled.img`
@@ -63,10 +76,16 @@ const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
   color: white;
+
+  
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+
+  @media (max-width: 1660px) {
+    font-size: 50px;
+  }
 `;
 
 const Desc = styled.p`

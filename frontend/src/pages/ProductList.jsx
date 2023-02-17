@@ -9,11 +9,13 @@ import { useState } from "react";
 const Container = styled.div``;
 
 const Title = styled.h1`
-  margin: 20px;
+ // margin: 20px;
 `;
 
 const FilterContainer = styled.div`
   display: flex;
+  margin-bottom: -140px;
+  background-color: #191919;
 `;
 
 const Filter = styled.div`
@@ -25,6 +27,7 @@ const FilterText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 20px;
+  color: white;
   ${mobile({ marginRight: "0px" })}
 `;
 
@@ -43,12 +46,11 @@ const ProductList = () => {
   return (
     <Container>
       <Navbar/>
-      <Title></Title>
       <FilterContainer>
         <Filter>
           <FilterText>Sort Products:</FilterText>
           <Select onChange={e => setSort(e.target.value)}>
-            <Option value="newest" >Newest</Option>
+            <Option value="newest">Newest</Option>
             <Option value="asc">Price (Low-High)</Option>
             <Option value="desc">Price (High-Low)</Option>
           </Select>

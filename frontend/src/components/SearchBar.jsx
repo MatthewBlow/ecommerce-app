@@ -12,6 +12,8 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  top: 0;
+  left: 0;
 `;
 
 const Input = styled.input`
@@ -35,9 +37,14 @@ const SearchBar = () => {
     const makeRequest = async() => {
       try {
         const res = await userRequest.get("/products")
-        const filteredData = res.data?.map(data => data.title).filter(search => search.includes(e.target.value))
+        const filteredData = res.data.map(data => data.title).filter(search => search.includes(e.target.value)).map(item => <div>{item.title}</div>)
         setSearchData(filteredData);
         console.log(filteredData);
+        /*
+        const res = await userRequest.get("/products")
+        const filteredData = res.data.map(data => data.title).filter(search => search.includes(e.target.value))
+        setSearchData(filteredData);
+        console.log(filteredData); */
       } catch (error) {
         console.log(error)
       }
@@ -52,13 +59,14 @@ const SearchBar = () => {
   return(
     <div>
     <SearchContainer>
-        <Input type="text" value={value} onChange={changeHandler} placeholder="Search" />
+        <Input type="text" onChange={changeHandler} placeholder="Search" />
         <Button>
         <SearchIcon style={{ color: "gray", fontSize: 16 }} />
         </Button>
     </SearchContainer>
+    {searchData}
     </div>
   )
 }
 
-export default SearchBar;
+// export default SearchBar;

@@ -9,7 +9,7 @@ import Invoice from "../components/Invoice";
 
 const Success = () => {
   const {state} = useLocation();
-  //in Cart.jsx I sent data and cart. Please check that page for the changes.(in video it's only data)
+  //in Cart.jsx I sent data and cart
   const { stripeData, products } = state
  // const data = location.state.stripeData;
  // const cart = location.state.cart;

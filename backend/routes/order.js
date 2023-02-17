@@ -1,5 +1,7 @@
 const { createOrder, updateOrder, deleteOrder, getOrder, getAllOrders, monthlyIncome} = require('../controllers/orderController');
-const { verifyTokenAndAdmin, verifyTokenAndAuthorization, verifyToken } = require('../middleware/authMiddleware');
+const { verifyTokenAndAdmin, 
+        verifyTokenAndAuthorization, 
+        verifyToken } = require('../middleware/authMiddleware');
 
 const router = require('express').Router();
 

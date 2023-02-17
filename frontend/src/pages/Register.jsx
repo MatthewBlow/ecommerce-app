@@ -45,9 +45,14 @@ const Input = styled.input`
 `;
 
 const Agreement = styled.span`
-  font-size: 12px;
+  font-size: 13px;
   margin: 20px 0px;
 `;
+
+const Error = styled.p`
+  color: red;
+  padding-top: 5px;
+`
 
 const Button = styled.button`
   width: 40%;
@@ -63,30 +68,103 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
+  const [emailIsValid, setEmailIsValid] = useState(true)
+  const [passwordIsValid, setPasswordIsValid] = useState(true)
+  const [allFieldsFull, setAllFieldsFull] = useState(true)
   const [success, setSuccess] = useState(null);
   const [passwordsMatch, setPasswordsMatch] = useState(true)
   const dispatch = useDispatch()
 
-  const handleRegister = async(e) => {
-    e.preventDefault()
+  const validateCredentials = async() => {
+    const email_regEx=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/;
+    const password_regEx=/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
+    
+    console.log(username !== '')
+    console.log(username !== '')
+
+
+    if(username === '' || email === '' || password === '' || confirmPassword === ''){
+      setAllFieldsFull(false)
+    } else if(username !== '' && email !== '' && !password !== '' && !confirmPassword !== '') {
+
+      setAllFieldsFull(true)
+      
+      if(email_regEx.test(email)){
+        setEmailIsValid(true)
+      } else if(!email_regEx.test(email) && email !== ""){
+        setEmailIsValid(false)
+      } 
+  
+      if(password_regEx.test(password)){
+        setPasswordIsValid(true)
+      } else if(!password_regEx.test(email) && email !== ""){
+        setPasswordIsValid(false)
+      } 
+  
+      if(password !== confirmPassword){
+        setPasswordsMatch(false)
+      } else if (password === confirmPassword){
+        setPasswordsMatch(true)
+      } 
+
+      if(emailIsValid && passwordIsValid && passwordsMatch && allFieldsFull){
+        try {
+          const res = await publicRequest.post(
+            "/auth/register",
+            {username, email, password})
+          res && setSuccess(true)
+          login(dispatch, { email, password } ); 
+        } catch (error) {
+        console.log(error)
+      } 
+    } 
+  }
+
+    /*
+    if(email_regEx.test(email)){
+      setEmailIsValid(true)
+    } else if(!email_regEx.test(email) && email !== ""){
+      setEmailIsValid(false)
+    } 
+
+    if(password_regEx.test(password)){
+      setPasswordIsValid(true)
+    } else if(!password_regEx.test(email) && email !== ""){
+      setPasswordIsValid(false)
+    } 
+
     if(password !== confirmPassword){
       setPasswordsMatch(false)
-      setSuccess(false)
-      console.log("Passwords must match!")
-    } else{
+    } else if (password === confirmPassword){
+      setPasswordsMatch(true)
+    } 
+    
+    if(emailIsValid && passwordIsValid && passwordsMatch && allFieldsFull){
+      setAllInputsValid(true)
       try {
-        setPasswordsMatch(true)
         const res = await publicRequest.post(
           "/auth/register",
           {username, email, password})
         res && setSuccess(true)
-        login(dispatch, { email, password } );
+        login(dispatch, { email, password } ); 
       } catch (error) {
       console.log(error)
     }
-    }
-    
+  } */
 }
+
+  const handleRegister = async(e) => {
+    e.preventDefault()
+    validateCredentials()
+    /*
+    if(username == "" || email == "" || password == "" || confirmPassword == ""){
+      setAllFieldsFull(false)
+    } else if(!username == "" && !email == "" && !password == "" && !confirmPassword == "") {
+      setAllFieldsFull(true)
+      validateCredentials()
+    } 
+    */
+  }
 
   return (
     <Container>
@@ -94,26 +172,28 @@ const Register = () => {
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
           <Input 
-            placeholder="Username" 
+            placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}/>
           <Input 
             placeholder="Email" 
+            autoComplete="new-email" 
             onChange={(e) => setEmail(e.target.value)}/>
           <Input 
             type="password" 
+            autoComplete="new-password"
             placeholder="Password" 
             onChange={(e) => setPassword(e.target.value)}/>
           <Input 
             type="password" 
             placeholder="Confirm Password" 
             onChange={(e) => setConfirmPassword(e.target.value)}/>
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
+          <Agreement>Password must contain a minimum of eight characters, one number and one special character</Agreement>
           <Button onClick={handleRegister}>CREATE</Button>
         </Form>
-        {!passwordsMatch && <p style={{ color: "red"}}>Passwords do not match!</p>}
+        {!allFieldsFull && <Error>Please fill all fields!</Error>}
+        {!passwordsMatch && <Error>Passwords do not match!</Error>}
+        {!emailIsValid && <Error>Email is not valid!</Error>}
+        {!passwordIsValid && <Error>Password is not valid!</Error>}
         {success && <Redirect to='/'/>}
       </Wrapper>
     </Container>

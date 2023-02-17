@@ -13,6 +13,18 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media (max-width: 1580px) {
+    height: 80%;
+  }
+
+  @media (max-width: 1325px) {
+    height: 70%;
+  }
+
+  @media (max-width: 1190px) {
+    height: 60%;
+  } 
 `
 const Info = styled.div`
     width: 100%;

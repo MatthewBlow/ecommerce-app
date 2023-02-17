@@ -198,29 +198,10 @@ const Cart = () => {
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
 
- /* useEffect(() => {
-    const createOrder = async () => {
-      try {
-        const res = await userRequest.post("/orders", {
-          userId: user._id,
-          products: order.products.products.map((item) => ({
-            productId: item._id,
-            quantity: item._quantity,
-          })),
-          amount: order.products.total,
-          address: order.stripeData.billing_details.address,
-        });
-        setOrderId(res.data._id);
-      } catch {}
-    }
-    order && createOrder()  
-  },[order, user]) */
-
   const handleClick = () => {
     dispatch(resetState())
   }
   
-
   return (
     <Container>
       <Navbar />

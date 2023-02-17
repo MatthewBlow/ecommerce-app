@@ -9,7 +9,6 @@ const Invoice = ({order}) => {
 	const {state} = useLocation();
 	const { stripeData } = state
 
-
     return(
         <div className="invoice-box">
 			<table cellpadding="0" cellspacing="0">

@@ -42,7 +42,7 @@ function App() {
           <Payment/>
         </Route>
         <Route exact path="/login">
-          {user ? <Redirect to="/"/> : <Login/>}
+        {user ? <Redirect to="/"/> : <Login/>}
         </Route>
         <Route exact path="/register">
         {user ? <Redirect to="/"/> : <Register/>}

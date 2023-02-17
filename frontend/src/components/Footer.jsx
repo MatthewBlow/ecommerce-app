@@ -13,8 +13,8 @@ import {
   const Container = styled.div`
     display: flex;
     caret-color: transparent;
-    ${mobile({ flexDirection: "column" })}
-    margin: 150px 0px;
+    ${mobile({ flexDirection: "column" })};
+    margin: 30px;
   `;
   
   const Left = styled.div`

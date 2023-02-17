@@ -9,11 +9,12 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { logout } from "../redux/apicalls";
-import SearchBar from './SearchBar';
+import SearchBar from './SearchBar/SearchBar';
 
 const Container = styled.div`
-  background-color: rgb(203, 199, 199);
-  margin: -10px;
+  margin: -9px;
+  position: relative;
+  width: 100vw;
   ${mobile({ height: "50px" })}
 `;
 
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1920px;
+  width: 100%;
   ${mobile({ padding: "10px 0px" })}
 `;
 
@@ -37,7 +38,6 @@ const Center = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-left: 100px;
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 
@@ -55,7 +55,6 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 30px;
   caret-color: transparent;
   ${mobile({ flex: 2, justifyContent: "center" })}`
 
@@ -90,7 +89,7 @@ const NavbarTest = () => {
   }
 
   return (
-    <Navbar style={{ padding: "9px" }}>
+    <Navbar bg="dark" variant='dark' style={{ padding: "9px" }}>
         <Container>
         <Wrapper>
         <Left>
@@ -103,16 +102,16 @@ const NavbarTest = () => {
             <Center>
             <Nav className="me-auto">
               <Nav.Link>
-              <Link style={{ color: "black", fontWeight: "normal"}} to="/">
+              <Link style={{ color: "white", fontWeight: "normal"}} to="/">
                 Home
                 </Link>
               </Nav.Link>
               <Nav.Link>
-              <Link style={{ color: "black", fontWeight: "normal"}} to="/products">
+              <Link style={{ color: "white", fontWeight: "normal"}} to="/products">
                 All Products
                 </Link>
               </Nav.Link>
-            <NavDropdown title="PC Parts" id="basic-nav-dropdown" style={{ color: "black", fontWeight: "normal"}}>
+            <NavDropdown title="PC Parts" id="basic-nav-dropdown" style={{ fontWeight: "normal"}} menuVariant='dark'>
               <NavDropdown.Item>
               <Link style={{ color: "black", fontWeight: "normal"}} to='/products/desktop'>
                 Desktop
@@ -160,17 +159,17 @@ const NavbarTest = () => {
             <Right>
             <Nav>
             {user ?
-             <Nav.Link onClick={logoutHandle} to='/' style={{ color: "black"}}>
+             <Nav.Link onClick={logoutHandle} to='/' style={{ color: "white"}}>
              Log Out
            </Nav.Link> :
             <>
             <Nav.Link>
-              <Link to="/register" style={{ color: "black"}}>
+              <Link to="/register" style={{ color: "white"}}>
                 Register
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/login" style={{ color: "black"}}>
+              <Link to="/login" style={{ color: "white"}}>
                 Sign In
               </Link>
             </Nav.Link> 
@@ -178,7 +177,7 @@ const NavbarTest = () => {
             } 
             <Link to="/cart">
             <Badge className='cart' badgeContent={quantity} color="primary">
-              <ShoppingCartIcon style={{ color: "black"}}/>
+              <ShoppingCartIcon style={{ color: "white"}}/>
             </Badge>
             </Link>
             </Nav>

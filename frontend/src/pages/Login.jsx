@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { login } from "../redux/apicalls";
@@ -21,10 +22,10 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 20%;
-  height: 35%;
+
   padding: 20px;
   margin-bottom: 110px;
+  overflow: hidden;
   background-color: white;
   ${mobile({ width: "75%" })}
 `;
@@ -46,6 +47,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+  margin: auto;
   width: 40%;
   border: none;
   padding: 15px 20px;
@@ -59,12 +61,25 @@ const Button = styled.button`
   }
 `;
 
-const Link = styled.a`
+const CreateAccount = styled.a`
+  margin: auto;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+
+`;
+
+const ForgotPassword = styled.a`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
 `;
+
+const Validation = styled.p`
+  font-size: 12px;
+  color: red;
+`
 
 const Error = styled.span`
   color: red;
@@ -72,13 +87,42 @@ const Error = styled.span`
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [emailValMessage, setEmailVal] = useState("")
+  const [passwordValMessage, setPasswordVal] = useState("")
+  const [emailIsValid, setEmailIsValid] = useState(false)
+  const [passwordIsValid, setPasswordIsValid] = useState(false)
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector(state => state.user)
 
+  const validateCredentials = async() => {
+    const email_regEx=/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-z]+)$/;
+    const password_regEx=/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/
+
+    if(email_regEx.test(email)){
+      setEmailVal("Email is Valid")
+      setEmailIsValid(true)
+    } else if(!email_regEx.test(email) && email !== ""){
+      setEmailVal("Please enter a valid email address!")
+      setEmailIsValid(false)
+    } else {
+      setEmailVal("")
+    }
+
+    if(password_regEx.test(password)){
+      setPasswordVal("Password is Valid")
+      setPasswordIsValid(true)
+      login(dispatch, { email, password } );
+    } else if(!password_regEx.test(email) && email !== ""){
+      setPasswordVal("Please enter a valid password!")
+      setPasswordIsValid(false)
+    } else {
+      setPasswordVal("")
+    }
+  }
+
   const handleLogin = (e) => {
     e.preventDefault()
-    login(dispatch, { email, password } );
-    console.log(email, password);
+    validateCredentials()
   }
   return (
     <Container>
@@ -88,14 +132,17 @@ const Login = () => {
           <Input 
             placeholder="Username" 
             onChange={(e) => setEmail(e.target.value)}/>
+          <Validation>{!emailIsValid && emailValMessage}</Validation>
           <Input 
             placeholder="Password" 
             type="password"
             onChange={(e) => setPassword(e.target.value)}/>
+          <Validation>{!passwordIsValid && passwordValMessage}</Validation>
           <Button onClick={handleLogin} disabled={isFetching}>LOGIN</Button>
           {error && <Error>Something went wrong...</Error>}
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <CreateAccount>
+            <Link to='/register'>CREATE A NEW ACCOUNT</Link>
+          </CreateAccount>
         </Form>
       </Wrapper>
     </Container>

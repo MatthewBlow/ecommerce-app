@@ -150,11 +150,7 @@ const Product = () => {
       setQuantity(quantity + 1)
     }
   }
-
-  console.log(product);
-  console.log(quantity);
-  console.log(cart)
-
+   
   const handleClick = () => {
     dispatch(
       addProduct({ ...product, quantity })

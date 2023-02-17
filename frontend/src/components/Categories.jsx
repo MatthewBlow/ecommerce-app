@@ -7,8 +7,7 @@ const Container = styled.div`
     height: 630px;
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 30px;
-    margin: -8px;
+    margin-top: -8px;
     justify-content: space-evenly;
     background-color: #191919;
 `
@@ -26,7 +25,6 @@ const Categories = () => {
     <div>
     <CategoriesTitle>Most Popular Categories</CategoriesTitle>
     <Container>
-    
         {categories.map((item) => (
           <CategoryItem item={item} key={item.id}/>
         ))}
