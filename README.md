@@ -54,6 +54,7 @@
 ### Frontend Setup
 
 Open 2 seperate terminals for the frontend and the backend, make sure you are you are in the main `ecommerce-app` directory for both 
+If the backend server crashes, it is most likely because you do not have the permissions.
 
 type `cd frontend` to access frontend folder
 
