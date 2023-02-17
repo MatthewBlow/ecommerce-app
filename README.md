@@ -53,7 +53,7 @@
 
 ### Frontend Setup
 
-In the terminal, make sure you are you are in the main `ecommerce-app` directory 
+Open 2 seperate terminals for the frontend and the backend, make sure you are you are in the main `ecommerce-app` directory for both 
 
 type `cd frontend` to access frontend folder
 
